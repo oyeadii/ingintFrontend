@@ -1,6 +1,5 @@
 Certainly! Below is a template for a README file for your Next.js project named "ingint". You can customize the sections to better fit your project's specifics.
 
-````markdown
 # Ingint
 
 A Next.js project created to provide a seamless user experience and high performance.
@@ -17,10 +16,11 @@ These instructions will get you a copy of the project up and running on your loc
 ## Installation
 
 1. **Clone the repository:**
+
 ```bash
 git clone https://github.com/your-username/ingint.git
 cd ingint
-````
+```
 
 2. **Setup Environment Variables:**
 
