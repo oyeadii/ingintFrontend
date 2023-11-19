@@ -1,5 +1,3 @@
-Certainly! Below is a template for a README file for your Next.js project named "ingint". You can customize the sections to better fit your project's specifics.
-
 # Ingint
 
 A Next.js project created to provide a seamless user experience and high performance.
