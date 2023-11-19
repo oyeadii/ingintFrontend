@@ -545,6 +545,7 @@ const ManageFiles = () => {
       </Modal>
 
       <br></br>
+
       {isLoaded && filler === "list" && <TableLoading count={4} />}
       {filler === "list" && !isLoaded && rows ? (
         <div>
@@ -810,28 +811,88 @@ const ManageFiles = () => {
         <></>
       )}
       {!isLoaded && rows.length == 0 ? (
-        <div className="bg-white">
+        <>
           <div
-            className={`
-        card rounded-md  dark:bg-slate-800 " border border-slate-200 dark:border-slate-700"`}
+            className={`${
+              width < breakpoints.md ? "space-x-rb" : ""
+            } md:flex md:space-x-4 md:justify-end items-center rtl:space-x-reverse mb-3`}
           >
-            <header className="card-header flex justify-center items-center ">
-              <div>
-                <div className={`card-title`}>No Files Found</div>
-              </div>
-            </header>
-            <main className={`card-body`}>
-              <div className="left-0 2xl:bottom-[-160px] bottom-[-130px] items-center flex justify-center  z-[-1]">
-                <img
-                  src="/assets/images/svg/nofilesfound.svg"
-                  alt=""
-                  style={{ width: "50%" }}
-                  className="object-contain"
-                />
-              </div>
-            </main>
+            {Object.keys(rows).length > 0 ? (
+              <Button
+                onClick={() => {
+                  deleteFiles()
+                  // handleDelete(row.id)
+                }}
+                className={`
+                
+                       bg-danger-500 text-danger-500 bg-opacity-30 dark:text-white   hover:bg-opacity-100 hover:text-white
+
+                   w-full border-b border-b-gray-500 border-opacity-10 text-sm  last:mb-0 cursor-pointer 
+                   first:rounded-t last:rounded-b flex  space-x-2 items-center rtl:space-x-reverse `}
+              >
+                <span className="text-base">
+                  <Icon icon="heroicons-outline:trash" />
+                </span>
+                <span>Delete All Embeddings</span>
+              </Button>
+            ) : (
+              ""
+            )}
+            <input
+              id="manageFile"
+              type="file"
+              style={{ display: "none" }}
+              onChange={handleFileChange}
+              multiple
+            />
+            <div>
+              <Button
+                icon="heroicons-outline:plus"
+                text="Upload Files"
+                className="text-white bg-[#6699cc] dark:bg-blue-600  h-min text-sm font-normal"
+                iconClass=" text-lg"
+                onClick={() => document.getElementById("manageFile").click()}
+              />
+
+              <div
+                className={`${
+                  width < breakpoints.md ? "space-x-rb" : ""
+                } md:flex md:space-x-4 md:justify-end items-center rtl:space-x-reverse`}
+              ></div>
+
+              <div></div>
+            </div>
+            <Button
+              icon="heroicons-outline:plus"
+              text="Add Website"
+              className="text-white bg-[#6699cc] dark:bg-blue-600  h-min text-sm font-normal"
+              iconClass=" text-lg"
+              onClick={() => setAddWebsite(true)}
+            />
           </div>
-        </div>
+          <div className="bg-white">
+            <div
+              className={`
+        card rounded-md  dark:bg-slate-800 " border border-slate-200 dark:border-slate-700"`}
+            >
+              <header className="card-header flex justify-center items-center ">
+                <div>
+                  <div className={`card-title`}>No Files Found</div>
+                </div>
+              </header>
+              <main className={`card-body`}>
+                <div className="left-0 2xl:bottom-[-160px] bottom-[-130px] items-center flex justify-center  z-[-1]">
+                  <img
+                    src="/assets/images/svg/nofilesfound.svg"
+                    alt=""
+                    style={{ width: "50%" }}
+                    className="object-contain"
+                  />
+                </div>
+              </main>
+            </div>
+          </div>
+        </>
       ) : (
         ""
       )}
