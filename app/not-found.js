@@ -1,5 +1,5 @@
-import React from "react";
-import Link from "next/link";
+import React from "react"
+import Link from "next/link"
 
 const PageNotFound = () => {
   return (
@@ -14,14 +14,14 @@ const PageNotFound = () => {
       </div>
       <div className="max-w-[300px] mx-auto w-full">
         <Link
-          href="/analytics"
+          href="/searchGPT"
           className="btn bg-white hover:bg-opacity-75 transition-all duration-150 block text-center"
         >
           Go to homepage
         </Link>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default PageNotFound;
+export default PageNotFound

@@ -11,7 +11,7 @@ const Logo = () => {
 
   return (
     <div className="flex">
-      <Link href="/analytics">
+      <Link href="/admin/manage-users">
         <React.Fragment>
           {width >= breakpoints.xl ? (
             <div>
